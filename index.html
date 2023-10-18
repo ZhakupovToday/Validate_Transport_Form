@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма Транспортные средства и водители</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.6/jquery.inputmask.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+
+    <script src="main.js"></script>
+
+    <script></script>
+  </head>
+
+  <body>
+    <div class="notification" id="notification">Форма успешно отправлена!</div>
+    <div class="form-container">
+      <div class="close-button">&times;</div>
+      <h1 class="form-title">Транспортные средства и водители</h1>
+      <form>
+        <div class="form-group">
+          <label for="govNumber">Гос-номер</label>
+          <input
+            class="form-input"
+            type="text"
+            id="govNumber"
+            placeholder="Укажите гос-номер"
+            required
+            pattern="[А-Яа-яЁё]{1}\d{3}[А-Яа-яЁё]{2}\d{3}"
+            title="Введите номер в формате: А999АА034"
+          />
+        </div>
+        <div class="form-group">
+          <label for="vehicle">Транспортное средство</label>
+          <input
+            class="form-input"
+            type="text"
+            id="vehicle"
+            placeholder="Транспортное средство"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="arrivalDate"
+            >Ориентировочная дата прибытия к покупателю</label
+          >
+          <input
+            class="form-date"
+            type="date"
+            placeholder="Дата*"
+            id="arrivalDate"
+            required
+          />
+        </div>
+        <h3 class="form-subtitle">Данные о водителе</h3>
+        <div class="form-group">
+          <label for="fullName">ФИО</label>
+          <input
+            class="form-input"
+            type="text"
+            id="fullName"
+            placeholder="Укажите ФИО водителя"
+            required
+            pattern="[А-Яа-яЁё]+\s[А-Яа-яЁё]+\s[А-Яа-яЁё]+"
+            title="Введите ФИО в формате: Имя Фамилия Отчество"
+          />
+        </div>
+        <div class="form-group">
+          <label for="passport">Паспортные данные</label>
+          <div class="form-group-row">
+            <input
+              class="form-input-half"
+              type="text"
+              id="passportSeries"
+              placeholder="Серия"
+              required
+              pattern="\d{4}"
+              title="4 цифры"
+            />
+            <input
+              class="form-input-half"
+              type="text"
+              id="passportNumber"
+              placeholder="Номер"
+              required
+              pattern="\d{6}"
+              title="6 цифры"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="passportIsWho">Кем выдан</label>
+          <input
+            class="form-input"
+            type="text"
+            id="passportIsWho"
+            placeholder="Кем выдан"
+            required
+            pattern="[А-Яа-яЁё\s]+"
+            title="Символы и цифры запрещены"
+          />
+        </div>
+        <div class="form-group">
+          <label for="passportIssueDate">Когда выдан</label>
+          <input
+            class="form-input"
+            type="date"
+            id="passportIssueDate"
+            placeholder="Когда выдан"
+            required
+          />
+        </div>
+        <div class="form-buttons">
+          <button class="form-button">Отправить</button>
+          <button
+            type="button"
+            class="form-button form-button-cancel"
+            id="cancelButton"
+          >
+            Отменить
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
